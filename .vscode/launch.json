@@ -1,0 +1,28 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Module",
+            "type": "python",
+            "request": "launch",
+            "program": "/mnt/data1/yhq/anaconda3/envs/lisa/bin/deepspeed",
+            "justMyCode": true,
+            "console": "integratedTerminal",
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "0",
+            },
+            "args": [
+                "--master_port=9947",
+                "train.py",
+                "--version=ckpts/llava-7b",
+                "--modelname=dn_dab_detr",
+                "--sample_rates=1",
+                "--coco_path=/mnt/data1/yhq/datasets/coco",
+                "--vision_tower=ckpts/openai/clip-vit-large-patch14"
+            ],
+        }
+    ]
+}
